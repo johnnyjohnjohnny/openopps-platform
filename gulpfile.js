@@ -64,7 +64,7 @@ gulp.task('lint', function () {
 gulp.task('sass', function () {
   return gulp.src('assets/styles/main.scss')
     .pipe(sass({
-      includePaths: [bourbon, neat],
+      includePaths: [bourbon, neat, 'node_modules/uswds/src/stylesheets'],
     }))
     .pipe(gulp.dest('dist/styles'));
 });
