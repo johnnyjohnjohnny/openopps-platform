@@ -28,13 +28,6 @@ node_modules
 # Ignore the local configuration file
 config/local.js
 
-# Ignore production files
-assets/build
-assets/uploads
-assets/js/bundle.js
-assets/styles/main.css
-dist/
-bin/
 
 # Ignore uswds files, these are set up during npm install
 assets/styles/uswds.css
@@ -73,3 +66,11 @@ tmp/
 
 # ignore npm audit
 .audit
+
+# Ignore built files.
+assets/build
+assets/uploads
+assets/js/bundle.js
+assets/styles/main.css
+dist/
+bin/

@@ -1,12 +1,13 @@
-FROM node:6.11.1
+FROM node:carbon
 
 RUN apt-get update && \
   apt-get install -y postgresql-client graphicsmagick
 
-WORKDIR app
+WORKDIR /app
 
-COPY package.json /app/package.json
-COPY tools/docker/wait-for-migrate-db-container.sh /
-
+COPY package.json .
 RUN npm install
 
+COPY . .
+
+CMD node app.js
