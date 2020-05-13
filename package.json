@@ -31,6 +31,7 @@
     "exif-parser": "^0.1.12",
     "faker": "^4.1.0",
     "font-face-mixin": "^1.1.0",
+    "forever": "^2.0.0",
     "fs-extra": "^5.0.0",
     "git-clone": "^0.1.0",
     "gm": "^1.23.1",

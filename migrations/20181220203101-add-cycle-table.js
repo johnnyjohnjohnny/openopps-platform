@@ -30,9 +30,10 @@ exports.up = function (db, callback) {
     updated_by: { type: 'bigint', notNull: true },
   }, (err) => {
     if (err) {
+      console.log(err);
       callback(err);
     } else {
-      Promise.all([
+      return Promise.all([
         db.addForeignKey('cycle', 'community', 'cycle_community_id_fkey', {
           'community_id': 'community_id',
         }, { onDelete: 'RESTRICT' }),
@@ -42,6 +43,7 @@ exports.up = function (db, callback) {
       ]).then(() => { 
         callback();
       }).catch((err) => {
+        console.log(err);
         callback(err);
       });
     }
