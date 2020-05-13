@@ -2,9 +2,9 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 8
     commands:
-      - echo Installing compilers.
-      - apt install build-essential
       - echo Installing npm modules.
       - npm install
   pre_build:
