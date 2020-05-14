@@ -1,7 +1,4 @@
-const cfenv = require('cfenv');
-const appEnv = cfenv.getAppEnv();
-const dbURL = appEnv.getServiceURL('psql-openopps') || process.env.DATABASE_URL;
-const redisCreds = appEnv.getServiceCreds('redis-openopps');
+const dbURL = process.env.DATABASE_URL;
 var session = {
 
   /* Session secret is automatically generated when your new app is created
@@ -31,11 +28,15 @@ var session = {
 };
 
 // Use redis for sessions
-if (redisCreds) {
+if (process.env.REDIS_HOST && process.env.REDIS_PASSWORD && process.env.REDIS_PORT) {
   session.store = require('koa-redis')({
-    host: redisCreds.hostname,
-    port: redisCreds.port,
-    password: redisCreds.password,
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT,
+    password: process.env.REDIS_PASS,
+  });
+} else if (process.env.REDIS_URL) {
+  session.store = require('koa-redis')({
+    url: process.env.REDIS_URL
   });
 } else if (process.env.NODE_ENV === 'development' && process.env.REDIS) {
   session.store = require('koa-redis')({});

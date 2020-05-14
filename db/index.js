@@ -1,23 +1,11 @@
-const _ = require('lodash');
-const cfenv = require('cfenv');
-const appEnv = cfenv.getAppEnv();
-const psqlConnection = appEnv.getServiceCreds('psql-openopps');
 const gen = require('postgres-gen');
 
 var config = openopps.dbConnection || {
-  host: 'localhost',
-  db: 'midas',
-  user: 'midas',
-  password: 'midas',
-  port: '5432',
+  host: process.env.DATABASE_HOST || 'localhost',
+  db: process.env.DATABASE_NAME || 'midas',
+  user: process.env.DATABASE_USER || 'midas',
+  password: process.env.DATABASE_PASSWORD || 'midas',
+  port: process.env.DATABASE_PORT || '5432',
 };
-
-if(!_.isEmpty(psqlConnection)) {
-  config.host = psqlConnection.host;
-  config.db = psqlConnection.db_name;
-  config.user = psqlConnection.username;
-  config.password = psqlConnection.password;
-  config.port = psqlConnection.port;
-}
 
 module.exports = gen(config);
