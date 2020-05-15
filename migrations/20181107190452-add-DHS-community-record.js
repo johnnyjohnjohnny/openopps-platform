@@ -15,6 +15,7 @@ exports.setup = function (options, seedLink) {
 };
 
 exports.up = function (db, callback) {
+  /*
   db.all('SELECT agency_id as id FROM agency WHERE name = \'Department of Homeland Security\'', (err, agency) => {
     if(err || agency.length == 0) {
       callback(err);
@@ -50,6 +51,7 @@ exports.up = function (db, callback) {
       ], callback);
     }
   });
+  */
 };
 
 exports.down = function (db) {

@@ -15,7 +15,9 @@ exports.setup = function (options, seedLink) {
 };
 
 exports.up = function (db) {
+  /*
   return db.runSql('UPDATE community SET target_audience = 1, duration = 1 where community_name = \'DHS Joint Duty Program\'');
+  */
 };
 
 exports.down = function (db) {
