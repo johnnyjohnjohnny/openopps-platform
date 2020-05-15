@@ -136,7 +136,7 @@
     "migrate:check": "node ./node_modules/db-migrate/bin/db-migrate up --dry-run",
     "publish": "gulp publish",
     "patch": "gulp patch",
-    "start": "npm run init && npm run migrate:up && node app.js",
+    "start": "npm run migrate:up && npm run init && node app.js",
     "test": "npm run test:unit",
     "test:unit": "node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/unit/setup.js test/unit/*.test.js test/unit/**/*.test.js --opts test/mocha.opts --reporter mocha-multi-reporters --reporter-options configFile=test/reporter.config.json",
     "test:integration": "node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/services/*.test.js",
