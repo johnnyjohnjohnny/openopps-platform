@@ -58,7 +58,7 @@ async function findOfficeRecord (name) {
     db.oneOrNone(queries.findOfficeRecord, [name]).then(async (record) => {
       resolve(record);
     }).catch(() => {
-      console.log('Found multiple records for name ' + bureau.name);
+      console.log('Found multiple records for name ' + name);
       resolve();
     });
   });
