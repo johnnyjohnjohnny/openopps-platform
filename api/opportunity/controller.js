@@ -25,10 +25,16 @@ router.get('/api/task/reindex', auth.isAdmin, async (ctx, next) => {
 });
 
 router.get('/api/task/search', async (ctx, next) => {
-  var request = elasticService.convertQueryStringToOpportunitiesSearchRequest(ctx);
-  var results = await elasticService.searchOpportunities(request);
+  try {
+    var request = elasticService.convertQueryStringToOpportunitiesSearchRequest(ctx);
+    console.log(request);
+    var results = await elasticService.searchOpportunities(request);
 
-  ctx.body = results;
+    ctx.body = results;
+  } catch (e) {
+    console.log(e, e.stack);
+    throw e;
+  }
 });
 
 router.get('/api/vanity/:vanity', async (ctx) => {
