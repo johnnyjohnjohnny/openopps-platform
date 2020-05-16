@@ -34,6 +34,10 @@ if (process.env.REDIS_HOST && process.env.REDIS_PASSWORD && process.env.REDIS_PO
     port: process.env.REDIS_PORT,
     password: process.env.REDIS_PASS,
   });
+} else if (process.env.REDIS_HOST) {
+  session.store = require('koa-redis')({
+    host: process.env.REDIS_HOST
+  });
 } else if (process.env.REDIS_URL) {
   session.store = require('koa-redis')({
     url: process.env.REDIS_URL
