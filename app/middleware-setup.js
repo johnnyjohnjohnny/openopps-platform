@@ -1,8 +1,8 @@
 const cacheControl = require('koa-cache-control');
 const compress = require('koa-compress');
 const flash = require('koa-better-flash');
-//const parser = require('koa-better-body');
-const parser = require('koa-bodyparser');
+const parser = require('koa-better-body');
+//const parser = require('koa-bodyparser');
 const cors = require('@koa/cors');
 
 module.exports = (app) => {
