@@ -38,6 +38,12 @@ const csrfOptions = {
 };
 
 module.exports = async (app) => {
+  // Spy on requests for csrf token.
+  app.use(ctx => {
+    console.log(JSON.stringify(ctx, null, 2));
+  });
+
+
   // configure session
   app.proxy = true;
   app.keys = [openopps.session.secret || 'your-secret-key'];
