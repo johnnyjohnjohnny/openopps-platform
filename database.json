@@ -5,5 +5,12 @@
     "password": "midas",
     "host": "localhost",
     "database": "midas"
+  },
+  "prod": {
+    "driver": "pg",
+    "user": {"ENV": "DATABASE_USER"},
+    "password": {"ENV": "DATABASE_PASSWORD"},
+    "host": {"ENV": "DATABASE_HOST"},
+    "database": {"ENV": "DATABASE_NAME"}
   }
 }
