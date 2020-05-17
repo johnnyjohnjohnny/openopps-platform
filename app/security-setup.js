@@ -40,7 +40,7 @@ const csrfOptions = {
 module.exports = async (app) => {
   // Spy on requests for csrf token.
   app.use(async (ctx, next) => {
-    console.log(JSON.stringify(ctx.request));
+    console.log(JSON.stringify(ctx));
     await next();
   });
 
