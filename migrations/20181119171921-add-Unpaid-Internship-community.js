@@ -47,7 +47,7 @@ exports.up = function (db, callback) {
         'studentinternship@state.gov',
         new Date(),
         new Date(),
-      ], callback);
+      ], callback());
     }
   });
 };

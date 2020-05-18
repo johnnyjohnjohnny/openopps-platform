@@ -49,7 +49,7 @@ exports.up = function (db, callback) {
             1,
             new Date(),
             new Date(),
-          ], callback);
+          ], callback());
         }
       });
     }

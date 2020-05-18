@@ -17,7 +17,7 @@ exports.setup = function(options, seedLink) {
 exports.up = function(db, callback) {
   db.runSql(`
     delete from agency
-  `, callback);
+  `, callback());
   db.insert('agency', [
     'agency_id',
     'name',
@@ -40,7 +40,7 @@ exports.up = function(db, callback) {
     'CDPH',
     'CA',
     false
-  ], callback);
+  ], callback());
   db.insert('agency', [
     'agency_id',
     'name',
@@ -63,7 +63,7 @@ exports.up = function(db, callback) {
     'DSS',
     'CA',
     false
-  ], callback);
+  ], callback());
 };
 
 exports.down = function(db) {

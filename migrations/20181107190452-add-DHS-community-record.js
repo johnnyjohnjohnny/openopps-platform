@@ -47,7 +47,7 @@ exports.up = function (db, callback) {
         'JointDutyProgramOffice@hq.dhs.gov',
         new Date(),
         new Date(),
-      ], callback);
+      ], callback());
     }
   });
 };
