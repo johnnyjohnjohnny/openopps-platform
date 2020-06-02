@@ -1,9 +1,3 @@
-- name: California Department of Public Health
-  abbreviation: CDPH
-  domain: cdph.ca.gov
-- name: California Department of Social Services
-  abbreviation: CDSS
-  domain: dss.ca.gov
 - name: California Health and Human Services Agency
   abbreviation: CHHS
   domain: chhs.ca.gov
@@ -13,6 +7,9 @@
 - name: California Department of Child Support Services
   abbreviation: DCSS
   domain: childsup.ca.gov
+- name: California Department of Social Services
+  abbreviation: CDSS
+  domain: dss.ca.gov
 - name: California Department of Community Services and Development
   abbreviation: CSD
   domain: csd.ca.gov
@@ -28,15 +25,15 @@
 - name: California Department of Managed Health Care
   abbreviation: DMHC
   domain: dmhc.ca.gov
+- name: California Department of Public Health
+  abbreviation: CDPH
+  domain: cdph.ca.gov
 - name: California Department of Rehabilitation
   abbreviation: DOR
   domain: dor.ca.gov
 - name: California Department of State Hospitals
   abbreviation: DSH
   domain: dsh.ca.gov
-- name: California Office of Health Information Integrity
-  abbreviation: CalOHII
-  domain: ohi.ca.gov
 - name: California Office of Law Enforcement Support
   abbreviation: OLES
   domain: oles.ca.gov
@@ -49,3 +46,9 @@
 - name: California Office of the Patient Advocate
   abbreviation: OPA
   domain: opa.ca.gov
+- name: California Office of Health Information Integrity
+  abbreviation: CalOHII
+  domain: ohi.ca.gov
+- name: Office of the California Surgeon General
+  abbreviation: OSG
+  domain: osg.ca.gov
