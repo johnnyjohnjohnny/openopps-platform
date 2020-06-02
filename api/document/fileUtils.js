@@ -8,6 +8,14 @@ const config = openopps.fileStore || {};
 const gm = require('gm').subClass({ imageMagick: true });
 const exifParser = require('exif-parser');
 
+if (process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY) {
+  AWS.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION || 'us-west-1',
+  });
+}
+
 const storageTypes = {
   local: {
     store: function (name, data, cb) {
