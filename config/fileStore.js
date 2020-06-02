@@ -1,7 +1,4 @@
 var AWS = require('aws-sdk');
-var cfenv = require('cfenv');
-var appEnv = cfenv.getAppEnv();
-var s3Creds = appEnv.getServiceCreds('s3-midas-assets');
 
 var FS = {
   service: process.env.FILESTORE || 'local',
@@ -30,15 +27,12 @@ var FS = {
 
 };
 
-// If running in Cloud Foundry with an S3 credential service available
-if (s3Creds) {
+if (process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY) {
   AWS.config.update({
-    accessKeyId: s3Creds.access_key_id,
-    secretAccessKey: s3Creds.secret_access_key,
-    region: s3Creds.region,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION || 'us-west-1',
   });
-  FS.s3.bucket = s3Creds.bucket;
-  FS.s3.prefix = 'openopps-uploads';
 }
 
 module.exports.fileStore = FS;
