@@ -1,6 +1,6 @@
 FROM node:carbon-alpine
 
-RUN apk update && apk add git bash postgresql-client graphicsmagick
+RUN apk add --no-cache file bash git postgresql-client imagemagick graphicsmagick
 
 WORKDIR /app
 
