@@ -119,47 +119,10 @@
                     <span class="opportunity-options__text">Ongoing</span>
                   </button>
                 </li>
-                
-                  <li>
-                    <button type="button" class="opportunity-options__button time-options-time-required" id="part-time" value="Part Time Detail">
-                      <span class="opportunity-options__icon">
-                        <i class="fas fa-hourglass-half"></i>
-                      </span>
-                      <span class="opportunity-options__text">Part-time detail</span>
-                    </button>
-                  </li>
-                
-                  <li>
-                    <button type="button" class="opportunity-options__button time-options-time-required" id="full-time" value="Full Time Detail">
-                      <span class="opportunity-options__icon">
-                        <i class="fas fa-hourglass"></i>
-                      </span>
-                      <span class="opportunity-options__text">Full-time detail</span>
-                    </button>
-                  </li>               
               </ul>
               <p class="time-required-description" id="one-time-description"><em>A one time task with a defined timeline</em></p>
               <p class="time-required-description" id="ongoing-description"><em>Requires up to 20% of a participant's work time until goal is reached</em></p>
-              <p class="time-required-description" id="full-time-description"><em>Restricted to opportunity creator's agency</em></p>
-              <p class="time-required-description" id="part-time-description"><em>Requires up to 50% of a participant's work time until detail has ended</em></p>
                  
-                <fieldset class="usajobs-fieldset">
-                  <legend class="usa-sr-only">Detail reimbursable</legend>
-                  <div class="form-group required-input usa-fieldset-inputs checkboxes-horizontal-longtitle" id="detail-reimbursable">  
-                  <p class="label-brief">Is this detail reimbursable?</p>
-                  <span class="field-validation-error" style="display:none;" >Please select Yes or No.</span>
-                  <ul class="usa-unstyled-list" id="detail-reimbursable-group">
-                    <li>
-                      <input id="detail-yes" name="detail-group" type="radio" value="true"  <% if (data.isDetailReimbursable) { %><%= "checked" %><% } %> >
-                      <label for="detail-yes">Yes</label>
-                    </li>
-                    <li>
-                      <input id="detail-no" name="detail-group" type="radio" value="false"  <% if (data.isDetailReimbursable== false  ) { %><%="checked" %><% } %>>
-                      <label for="detail-no">No</label>
-                    </li>
-                  </ul>
-                </div> 
-                </fieldset>              
                 <% _.each(agencies, function (agency) { %>
                   <input type="checkbox" id="task-restrict-agency-<%- agency.agency_id %>" name="task-restrict-agency" value="<%- agency.agency_id %>" <% if (data.restrictedTo == agency.agency_id ) { %> checked="checked" <% } %> >
                   <label for="task-restrict-agency-<%- agency.agency_id %>">Limit participation to <%- agency.abbr ? agency.abbr : agency.name %> employees</label>
