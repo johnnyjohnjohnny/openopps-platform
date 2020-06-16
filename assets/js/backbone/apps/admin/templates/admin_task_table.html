@@ -20,11 +20,11 @@
           <option value="office" <% if (sort == 'office') { %>selected<% } %>>Office/post</option>
           <% } %>
           <% if (target == 'sitewide') { %>
-          <option value="agency" <% if (sort == 'agency') { %>selected<% } %>>Agency</option>
+          <option value="agency" <% if (sort == 'agency') { %>selected<% } %>>Department</option>
           <% } %>
           <% if (target == 'community') { %>
             <% if (referenceId !== 'dos') { %>
-              <option value="agency" <% if (sort == 'agency') { %>selected<% } %>>Agency</option>
+              <option value="agency" <% if (sort == 'agency') { %>selected<% } %>>Department</option>
             <% } %>
           <% } %>
           <option value="date" <% if (sort == 'date') { %>selected<% } %>>Date</option>
@@ -43,11 +43,11 @@
       <th>Office/post</th>
       <% } %>
       <% if (target == 'sitewide') { %>
-      <th>Agency</th>
+      <th>Department</th>
       <% } %>
       <% if (target == 'community') { %>
         <% if (referenceId !== 'dos') { %>
-        <th>Agency</th>
+        <th>Department</th>
         <% } %>
       <% } %>
       <th class="center">Date</th>

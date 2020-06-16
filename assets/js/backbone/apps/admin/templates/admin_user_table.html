@@ -32,7 +32,7 @@
           <option value="government_uri" <% if (sort == 'government_uri') { %>selected<% } %>>Government email</option>
           <option value="createdAt" <% if (sort == 'createdAt') { %>selected<% } %>>Created</option>
           <option value="disabled" <% if (sort == 'disabled') { %>selected<% } %>>Enabled</option>
-          <option value="isAgencyAdmin" <% if (sort == 'isAgencyAdmin') { %>selected<% } %>>Agency Admin</option>
+          <option value="isAgencyAdmin" <% if (sort == 'isAgencyAdmin') { %>selected<% } %>>Department Admin</option>
         </select>
     <% } %>
   </div>
@@ -44,7 +44,7 @@
     <tr>
       <th class="admin-table-name">Name</th>
       <% if (target == 'sitewide') { %>
-        <th>Agency</th>
+        <th>Department</th>
         <th class="admin-table-usertype">User type</th>   
       <% } %>
       <th>Government email</th>

@@ -11,8 +11,8 @@
   <div class="usajobs-grid-full">
     <div class="usa-width-one-whole">
       <fieldset class="usajobs-fieldset">
-        <legend class="usa-sr-only">Select agency</legend>
-        <label for="agencies" class="usa-sr-only">Agency</label>
+        <legend class="usa-sr-only">Select department</legend>
+        <label for="agencies" class="usa-sr-only">Department</label>
         <select id="agencies" class="dropdown">
           <% _.each(departments, function (d) { %>
             <optgroup label="<%- d.name %>">
@@ -44,8 +44,6 @@
         <ul class="usajobs-unstyled-list submetrics">
           <li>One-time: <%- numeral(agency.tasks.oneTime).format('0,0') %></li>
           <li>Ongoing: <%- numeral(agency.tasks.onGoing).format('0,0') %></li>
-          <li>Part-time detail: <%- numeral(agency.tasks.partTime).format('0,0') %></li>
-          <li>Full-time detail: <%- numeral(agency.tasks.fullTime).format('0,0') %></li>
         </ul>
       </li>
       <li>Submitted: <%- numeral(agency.tasks.submitted).format('0,0') %></li>
