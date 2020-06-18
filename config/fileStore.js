@@ -27,7 +27,7 @@ var FS = {
 
 };
 
-/*
+
 if (process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY) {
   AWS.config.update({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -35,6 +35,6 @@ if (process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY) {
     region: process.env.AWS_REGION || 'us-west-1',
   });
 }
-*/
+
 
 module.exports.fileStore = FS;
