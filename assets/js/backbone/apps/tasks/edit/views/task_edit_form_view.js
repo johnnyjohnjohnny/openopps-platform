@@ -777,7 +777,7 @@ var TaskEditFormView = Backbone.View.extend({
       restrict     : this.model.get('restrict'),
       peopleNeeded : this.$('.opportunity-people.selected').val(),
       grade: '',
-      payLevelId: null
+      payLevelId: null,
     };
 
     if( this.$('.time-options-time-required.selected').val() == 'Part Time Detail'|| this.$('.time-options-time-required.selected').val() == 'Full Time Detail'){
