@@ -10,7 +10,6 @@
 process.chdir(__dirname);
 
 console.log('starting application...');
-require("log-node")();
 
 require('app-module-path').addPath('lib/');
 
