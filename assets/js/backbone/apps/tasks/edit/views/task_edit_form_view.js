@@ -15,6 +15,8 @@ var charcounter = require('../../../../../vendor/jquery.charcounter');
 var TaskEditFormView = Backbone.View.extend({
 
   events: {
+    'keypress #task-title'                : 'ignoreEnter',
+    'keypress .usa-input-inline'          : 'ignoreEnter',
     'blur .validate'                      : 'validateField',
     'change .validate'                    : 'validateField',
     'click #change-owner'                 : 'displayChangeOwner',
@@ -27,10 +29,10 @@ var TaskEditFormView = Backbone.View.extend({
     'click .expandorama-button-team'      : 'toggleAccordion2',
     'click .expandorama-button-keywords'  : 'toggleAccordion3',
     'click .expandorama-button-requirement': 'toggleAccordion4',
-    'click .expandorama-button-apply'      : 'toggleAccordion5',
+    'click .expandorama-button-apply'     : 'toggleAccordion5',
     'change [name=CareerField]'           : 'toggleCareerField',
-    'change [name=task-restrict-agency]'        : 'toggleAgencyRestrict',  
-    'change input[name=detail-group]'      : 'changeDetailReimbursable', 
+    'change [name=task-restrict-agency]'  : 'toggleAgencyRestrict',  
+    'change input[name=detail-group]'     : 'changeDetailReimbursable', 
     
   
 
@@ -47,7 +49,7 @@ var TaskEditFormView = Backbone.View.extend({
     this.agencies               = this.model.get('agencies') || this.toList(this.agency);
     this.data                   = {};
     this.data.newTag            = {};
-    this.communities            =  {};
+    this.communities            = {};
     this.payPlans               = [];
    
     TaskFormViewHelper.annotateTimeRequired(options.tagTypes['task-time-required'], this.agency);
@@ -538,6 +540,13 @@ var TaskEditFormView = Backbone.View.extend({
       $('.usa-input-error').get(0).scrollIntoView();
     }
     return abort;
+  },
+
+  ignoreEnter: function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      return false;
+    }
   },
 
   submit: function (e) {
