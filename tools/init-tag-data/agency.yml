@@ -52,3 +52,9 @@
 - name: Office of the California Surgeon General
   abbreviation: OSG
   domain: osg.ca.gov
+- name: California Department of Corrections and Rehabilitation
+  abbreviation: CDCR
+  domain: cdcr.ca.gov
+- name: California Secretary of State
+  abbreviation: SOS
+  domain: sos.ca.gov
